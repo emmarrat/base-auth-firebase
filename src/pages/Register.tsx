@@ -45,7 +45,7 @@ export const Register = () => {
           />
           {error && <Typography color="error">{error}</Typography>}
           <Button fullWidth variant="contained" type="submit" sx={{ mt: 2 }}>
-            Login
+            Register
           </Button>
           <Typography sx={{ mt: 2 }}>
             Already have an account? <Link to="/login">Login</Link>

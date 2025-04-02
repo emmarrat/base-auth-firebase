@@ -7,10 +7,10 @@ interface Post {
   id: string;
   content: string;
   userId: string;
+  email: string;
   createdAt: string;
 }
-// pf2FkxBC5wcsyNo2IsnEeuD4y5N2
-export const PostsPage = () => {
+export const Posts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedUserId, setSelectedUserId] = useState<string>('');
   const { user } = useAuthStore();
@@ -61,6 +61,7 @@ export const PostsPage = () => {
           <ListItem key={post.id}>
             <Typography>
               {post.content} - {new Date(post.createdAt).toLocaleDateString()}
+              Author: {post.email}
             </Typography>
           </ListItem>
         ))}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Container, Box } from '@mui/material';
 import { useAuthStore } from '../store/useAuthStore.ts';
 import {axiosApi} from '../axiosApi.ts';
@@ -14,6 +14,7 @@ export const CreatePost = () => {
     await axiosApi.post('/posts.json', {
       content,
       userId: user.id,
+      email: user.email,
       createdAt: new Date().toISOString(),
     });
     setContent('');
